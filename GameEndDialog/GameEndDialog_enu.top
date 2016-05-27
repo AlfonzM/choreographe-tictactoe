@@ -1,0 +1,10 @@
+topic: ~GameEndDialog()
+language: enu
+
+concept:(gameEnd) ["Nice game!" "Great game!" "That was fun."]
+
+concept:(playAgain)["Would you like to play again?" "Let's play another game!" "We should play another round!"]
+
+u:(e:onStart) ~gameEnd ~playAgain
+
+u:(yes "play again") play again $onStopped=1

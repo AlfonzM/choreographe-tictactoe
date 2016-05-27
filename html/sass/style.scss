@@ -1,0 +1,168 @@
+body, h1 {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', Helvetica;
+}
+
+$height: 1067px;
+$width: 1707px;
+$title-height: 100px;
+
+$modal-height: 600px;
+$modal-width: 900px;
+
+$my-black: #333;
+
+.center-block-elem{
+  display: -webkit-flex;
+  display:         flex;
+
+  -webkit-align-items: center;
+          align-items: center;
+
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.center-inline-elem{
+  display: -webkit-inline-flex !important;
+  display:         inline-flex !important;
+
+  -webkit-align-items: center !important;
+          align-items: center !important;
+
+  -webkit-justify-content: center !important;
+          justify-content: center !important;
+}
+
+.border-box{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+$icon-size: 250px;
+$cross-color: tomato;
+$circle-color: yellowgreen;
+$icon-weight: 20px;
+
+.button {
+	// background-color: green;
+	height: ($height - 50) / 3;
+	width: $width / 3;
+	display: inline-block;
+	border: 1px solid #ddd;
+	@extend .border-box;
+	@extend .center-inline-elem;
+
+	vertical-align: top;
+
+	position: relative;
+}
+
+.cross {
+	&:before, &:after{
+		content: '';
+		width: $icon-weight;
+		height: $icon-size;
+		background-color: $cross-color;
+
+		border-radius: 999px;
+
+		position: absolute;
+		top: calc(50% - (#{$icon-size}/2));
+		left: calc(50% - (5px/2));
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+
+.circle {
+	&:before {
+		height: $icon-size;
+		width: $icon-size;
+
+		@extend .border-box;
+
+		border: $icon-weight solid $circle-color;
+		background-color: none;
+
+		content: '';
+		position: absolute;
+		top: calc(50% - (#{$icon-size}/2));
+		left: calc(50% - (#{$icon-size}/2));
+
+		border-radius: $icon-size/2;
+	}
+}
+
+#container{
+	width: $width;
+	height: $height;
+
+	position: relative;
+
+	#title {
+		@extend .center-block-elem;
+
+		color: white;
+		font-size: 36pt;
+		height: $title-height;
+		background-color: $my-black;
+	}
+
+	#game {
+		height: $height - $title-height;
+	}
+}
+
+#modal {
+	display: none;
+	// display: flex;
+
+	* {
+		min-width: 100%;
+		display: block;
+	}
+
+	flex-direction: column;
+	background-color:white;
+	box-shadow: 0px 0px 50px #bbb;
+	width: $modal-width;
+	height: $modal-height;
+
+	position: absolute;
+	top: calc(50% - (#{$modal-height}/2));
+	left: calc(50% - (#{$modal-width}/2));
+
+	z-index: 1000;
+
+	$title-container-height: 70%;
+
+	border: 1px solid #ddd;
+
+	& .title-container{
+		@extend .center-block-elem;
+		height: $title-container-height;
+		// background-color: orange;
+
+		& h1{
+			text-align: center;
+			font-size: 36pt;
+		}
+	}
+
+	& .button-container {
+		font-size: 36pt;
+		color: #ffffff;
+		background-color: yellowgreen;
+		@extend .center-block-elem;
+		height: 100% - $title-container-height;
+	}
+}

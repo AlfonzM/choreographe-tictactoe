@@ -1,0 +1,6 @@
+topic: ~MakeMove()
+language: enu
+
+concept:(makeMove) ["Hmmm..." "Let me think" "What should I do..." "My turn!"]
+
+u:(e:onStart) ^rand~makeMove $onStopped=1

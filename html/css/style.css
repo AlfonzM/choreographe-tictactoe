@@ -1,0 +1,98 @@
+body, h1 {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', Helvetica; }
+
+.center-block-elem, #container #title, #modal .title-container, #modal .button-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+.center-inline-elem, .button {
+  display: -webkit-inline-flex !important;
+  display: inline-flex !important;
+  -webkit-align-items: center !important;
+  align-items: center !important;
+  -webkit-justify-content: center !important;
+  justify-content: center !important; }
+
+.border-box, .button, .circle:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.button {
+  height: 339px;
+  width: 569px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  position: relative; }
+
+.cross:before, .cross:after {
+  content: '';
+  width: 20px;
+  height: 250px;
+  background-color: tomato;
+  border-radius: 999px;
+  position: absolute;
+  top: calc(50% - (250px/2));
+  left: calc(50% - (5px/2)); }
+.cross:before {
+  transform: rotate(45deg); }
+.cross:after {
+  transform: rotate(-45deg); }
+
+.circle:before {
+  height: 250px;
+  width: 250px;
+  border: 20px solid yellowgreen;
+  background-color: none;
+  content: '';
+  position: absolute;
+  top: calc(50% - (250px/2));
+  left: calc(50% - (250px/2));
+  border-radius: 125px; }
+
+#container {
+  width: 1707px;
+  height: 1067px;
+  position: relative; }
+  #container #title {
+    color: white;
+    font-size: 36pt;
+    height: 100px;
+    background-color: #333; }
+  #container #game {
+    height: 967px; }
+
+#modal {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 0px 50px #bbb;
+  width: 900px;
+  height: 600px;
+  position: absolute;
+  top: calc(50% - (600px/2));
+  left: calc(50% - (900px/2));
+  z-index: 1000;
+  border: 1px solid #ddd; }
+  #modal * {
+    min-width: 100%;
+    display: block; }
+  #modal .title-container {
+    height: 70%; }
+    #modal .title-container h1 {
+      text-align: center;
+      font-size: 36pt; }
+  #modal .button-container {
+    font-size: 36pt;
+    color: #ffffff;
+    background-color: yellowgreen;
+    height: 30%; }
+
+/*# sourceMappingURL=style.css.map */

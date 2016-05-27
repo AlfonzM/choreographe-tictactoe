@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+	<script src="scripts/game.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body onLoad="init();">
+
+	<form id="container" name="tic" method="post">
+		<div id="title">
+			Tic-Tac-Toe
+		</div>
+		<div id="game">
+			<div class="button" id="cell0" onclick="playerClickCell(0)"></div><div class="button" id="cell1" onclick="playerClickCell(1)"></div><div class="button" id="cell2" onclick="playerClickCell(2)"></div><br/><div class="button" id="cell3" onclick="playerClickCell(3)"></div><div class="button" id="cell4" onclick="playerClickCell(4)"></div><div class="button" id="cell5" onclick="playerClickCell(5)"></div><br/><div class="button" id="cell6" onclick="playerClickCell(6)"></div><div class="button" id="cell7" onclick="playerClickCell(7)"></div><div class="button" id="cell8" onclick="playerClickCell(8)"></div>
+		</div>
+
+		<div id="modal">
+			<div class="title-container">
+				<h1 id="gameover-result">You win!</h1>
+			</div>
+			<div class="button-container" onclick="initGame();">
+				Play again!
+			</div>
+		</div>
+	</form>
+
+
+</body>
+
+</html>
